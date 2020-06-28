@@ -61,21 +61,7 @@ export default function Home() {
     <SafeAreaView style={styles.container}>
 
       <View >
-      <FlatList
-        data={DATA}
-        renderItem={({ item }) => (
-          <View style={styles.GridViewBlockStyle}>
-          <Item
-            id={item.id}
-            title={item.title}
-            selected={!!selected.get(item.id)}
-            onSelect={onSelect}
-          />
-          </View>
-        )}
-        keyExtractor={item => item.id}
-        extraData={selected} u
-      />
+      <Text> ready to start </Text>
       </View>
     </SafeAreaView>
   );
