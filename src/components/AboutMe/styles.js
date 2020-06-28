@@ -1,9 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+    container:{
+      backgroundColor: "white",
+      height: '100%'
+    },  
     header:{
-      backgroundColor: "#00BFFF",
-      height:200,
+      backgroundColor: "white",
+      height:150,
     },
     avatar: {
       width: 130,
@@ -11,10 +15,9 @@ const styles = StyleSheet.create({
       borderRadius: 63,
       borderWidth: 4,
       borderColor: "white",
-      marginBottom:10,
       alignSelf:'center',
       position: 'absolute',
-      marginTop:130
+      marginTop:20
     },
     name:{
       fontSize:22,
@@ -22,12 +25,12 @@ const styles = StyleSheet.create({
       fontWeight:'600',
     },
     body:{
-      marginTop:40,
+      backgroundColor: 'white',
+      marginTop:15,
     },
     bodyContent: {
       flex: 1,
       alignItems: 'center',
-      padding:30,
     },
     name:{
       fontSize:28,
@@ -37,7 +40,9 @@ const styles = StyleSheet.create({
     info:{
       fontSize:16,
       color: "#00BFFF",
-      marginTop:10
+      marginTop:10,
+      alignItems: 'center',
+
     },
     major:{
       fontSize:16,
@@ -67,14 +72,71 @@ const styles = StyleSheet.create({
       backgroundColor: "#00BFFF",
     },
     socialIcon: {
-      marginLeft: 14,
-      marginRight: 14,
-  
+      marginLeft: 10,
+      marginRight: 10,
     },
     socialRow: {
       flexDirection: 'row',
       marginTop:10
     },
+    scene: {
+      flex: 1,
+    },
+    scrollView: {
+      backgroundColor: 'white',
+      marginHorizontal: 20,
+    },
+    itemcontainer: {
+      flex: 1,
+      margin: 10,
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: 215,
+      borderColor: '#cccccc',
+      borderWidth: 0.5,
+      borderRadius: 20
+    },
+      name: {
+      flex: 1,
+      fontSize: 20,
+      fontWeight: 'bold',
+      textAlign: 'center',
+      color: '#333333',
+      marginTop: 8
+    },
+      photo: {
+      width: '100%',
+      height: 155,
+      borderRadius:20,
+      borderBottomLeftRadius: 0,
+      borderBottomRightRadius: 0,
+      shadowColor: 'blue',
+      shadowOffset: {
+        width: 0,
+        height: 3
+      },
+      shadowRadius: 5,
+      shadowOpacity: 1.0,
+      elevation: 3
+    },
+    info: {
+      marginTop: 3,
+      marginBottom: 5
+    },
+      scrollView: {
+      backgroundColor: 'white',
+      marginHorizontal: 20,
+    },
+    button: {
+      justifyContent: 'center',
+      margin: 10,
+  
+    },
+    Addcontainer: {
+      flex: 1,
+      alignItems: 'flex-start',
+      paddingHorizontal: 20
+    }
   });
    
   export default styles;
