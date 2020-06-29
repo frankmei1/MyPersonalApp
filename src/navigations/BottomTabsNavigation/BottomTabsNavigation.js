@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import Screens from '../Screens/Screens.js';
-import JoinMe from '../../components/JoinMe/JoinMe.js';
+import SubscribeMe from '../../components/SubscribeMe/SubscribeMe.js';
 import { Ionicons } from '@expo/vector-icons';
 import CustomedHeader from '../../components/Header/Header.js';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -19,7 +19,7 @@ const Stack = createStackNavigator();
         headerTitleStyle: styles.headerTitleStyle
       }}
     >
-      <Stack.Screen name="JoinMe" component={JoinMe} options={{ header: props => <CustomedHeader name="JoinMe" navigation={props.navigation} /> }}/>
+      <Stack.Screen name="SubscribeMe" component={SubscribeMe} options={{ header: props => <CustomedHeader name="SubscribeMe" navigation={props.navigation} /> }}/>
     </Stack.Navigator>
   )
 }
@@ -38,7 +38,7 @@ export default function BottomTabsNavigation(){
         iconName = focused
         ? 'ios-information-circle'
         : 'ios-information-circle-outline';
-      } else if (route.name === 'JoinMe') {
+      } else if (route.name === 'SubscribeMeForProjects') {
         iconName = focused
         ? 'ios-person-add'
         : 'ios-person-add';
@@ -53,7 +53,7 @@ export default function BottomTabsNavigation(){
       }}
     >
         <Tab.Screen name="Home" component={Screens} />
-        <Tab.Screen name="JoinMe" component={TabScreens} />
+        <Tab.Screen name="SubscribeMeForProjects" component={TabScreens} />
     </Tab.Navigator>
    )
 }

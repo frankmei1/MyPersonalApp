@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     },  
     header:{
       backgroundColor: "white",
-      height:150,
+      height:140,
     },
     avatar: {
       width: 130,
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
       borderColor: "white",
       alignSelf:'center',
       position: 'absolute',
-      marginTop:20
+      marginTop:10
     },
     name:{
       fontSize:22,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     body:{
       backgroundColor: 'white',
-      marginTop:15,
+      marginTop:10,
     },
     bodyContent: {
       flex: 1,
@@ -95,6 +95,9 @@ const styles = StyleSheet.create({
       borderColor: '#cccccc',
       borderWidth: 0.5,
       borderRadius: 20
+    },
+    movie:{
+      flex: 1
     },
       name: {
       flex: 1,

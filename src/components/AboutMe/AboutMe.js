@@ -10,31 +10,38 @@ import {
 
 } from 'react-native';
 import { Icon, Card } from 'react-native-elements'
+import movieData from '../../assets/profiles/bestMovies/bestMovies'
 import QingtianMei from '../../assets/profiles/QingtianMei.jpeg';
+import { useAsyncStorage } from '@react-native-community/async-storage';
 import styles from './styles'
 
-function Item({ id, title, info, selected, onSelect }) {
+function Item({ id, title, time, img}) {
   // const imageSource = '../assets/' + src;    
   return (
     <TouchableHighlight
       underlayColor = '#f0f'
-      onPress={() => onSelect(id)}
     >
     <View style = {styles.itemcontainer}>
-    <Image style={[styles.photo]} source={crossfit}/> 
-    <Text style={styles.name}>{title}</Text>
-    <Text style={styles.info}>{info}</Text>
-    <MenuButton
-            style={styles.button}
-            title="Learn More"
-            source={require('../../assets/icons/category.png')}
-          />
+    <Image style={[styles.photo]} source={{uri: img.src}}/> 
+    <Text style={styles.name}>{title},<Text style={styles.major}> {time} </Text></Text>
+  
     </View>
     </TouchableHighlight>
   );
 }
 
 export default function AboutMe() {
+  const { getItem, setItem } = useAsyncStorage('Counter');
+  const [value, setValue] = React.useState("");
+
+  const readItemFromStorage = async () => {
+    const item = await getItem();
+    setValue(JSON.parse(item)||value); // if item=="null", then just use value
+  };
+
+  React.useEffect(() => {
+    readItemFromStorage();
+  }, []);
 
   const openURL = (url) => {
     Linking.openURL(url).catch((err) => console.error('An error occurred', err));
@@ -84,6 +91,7 @@ export default function AboutMe() {
             />
           </View>
         </View>
+        <Text style={styles.name}>Subscribers: {value.length}</Text>
       </View>
       <ScrollView style={styles.scrollView}>
         <View style={styles.body}>
@@ -100,16 +108,60 @@ export default function AboutMe() {
               cooking skills.</Text>
             </Card>
           </View>
-          <View style={styles.bodyContent}>
-            <Card title="Profile Information">
+          <View style={styles.movie}>
+            <Card title="Favorite Moives">
             <FlatList
                 horizontal = 'true' 
-                data={items}
+                showsHorizontalScrollIndicator={false}
+                data={movieData}
                 renderItem={({ item }) => (
                 <Item
                   id={item.id}
-                  title={item.challenge}
-                  info = {item.enrollment}
+                  title={item.name}
+                  time = {item.time}
+                  img = {item.img}
+                />
+            )}
+          keyExtractor={item => item.id}
+      />
+            </Card>
+
+
+          </View>
+          <View style={styles.movie}>
+            <Card title="Favorite Moives">
+            <FlatList
+                horizontal = 'true' 
+                showsHorizontalScrollIndicator={false}
+                data={movieData}
+                renderItem={({ item }) => (
+                  console.log(item),
+                <Item
+                  id={item.id}
+                  title={item.name}
+                  time = {item.time}
+                  img = {item.img}
+                />
+            )}
+          keyExtractor={item => item.id}
+      />
+            </Card>
+
+
+          </View>
+          <View style={styles.movie}>
+            <Card title="Favorite Moives">
+            <FlatList
+                horizontal = 'true' 
+                showsHorizontalScrollIndicator={false}
+                data={movieData}
+                renderItem={({ item }) => (
+                  console.log(item),
+                <Item
+                  id={item.id}
+                  title={item.name}
+                  time = {item.time}
+                  img = {item.img}
                 />
             )}
           keyExtractor={item => item.id}
