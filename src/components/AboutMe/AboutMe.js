@@ -91,12 +91,12 @@ export default function AboutMe() {
             />
           </View>
         </View>
-        <Text style={styles.name}>Subscribers: {value.length}</Text>
+        <Text style={styles.subscribe}>Subscribers: {(value.length)/15}</Text>
       </View>
       <ScrollView style={styles.scrollView}>
         <View style={styles.body}>
           <View style={styles.bodyContent}>
-            <Card title="Profile Information" style = {{alignItems : 'center'}}>
+            <Card title="Profile Information" style = {{alignItems : 'center' }}>
               <Text style={styles.info}>Student / FrontEnd developer,</Text>
               <Text style={styles.school}> Brandeis University, </Text>
               <Text style={styles.major}>B.S Computer Science and Biology, </Text>
@@ -129,7 +129,7 @@ export default function AboutMe() {
 
           </View>
           <View style={styles.movie}>
-            <Card title="Favorite Moives">
+            <Card title="Favorite Books">
             <FlatList
                 horizontal = 'true' 
                 showsHorizontalScrollIndicator={false}
@@ -150,7 +150,7 @@ export default function AboutMe() {
 
           </View>
           <View style={styles.movie}>
-            <Card title="Favorite Moives">
+            <Card title="Favorite Musics">
             <FlatList
                 horizontal = 'true' 
                 showsHorizontalScrollIndicator={false}
@@ -167,8 +167,6 @@ export default function AboutMe() {
           keyExtractor={item => item.id}
       />
             </Card>
-
-
           </View>
         </View>
       </ScrollView>

@@ -31,7 +31,6 @@ export default function SubscribeMe({ route, navigation }) {
     const createNewMember = () =>{
         const member = {id: value.length + 1, firstName: firstName, lastName: lastName, email: email, phone: phone, interest:interest}
         writeItemToStorage(value.concat(member))
-
       }
 
     return (
